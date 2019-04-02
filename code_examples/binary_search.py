@@ -7,10 +7,10 @@ def bisect_search(l, e):
         # if only 1 element in list
         if high_index == low_index:
             # return true if the 1 element is = e
-            return l[low_index] == e
+            return l[low_index] == e # True
 
         # get the index of the middle element of the list
-        mid = (low_index + high_index)//2
+        mid = (low_index + high_index)//2 # int
 
         # check if the middle element is the right element
         if l[mid] == e:
@@ -22,12 +22,12 @@ def bisect_search(l, e):
             if low_index == mid:  # nothing left to search - if a list is of 2 elements then the middle would be index 0
                 return False
             else:
-                return bisect_search_helper(l, e, low_index, mid - 1)
+                return bisect_search_helper(l, e, low_index, mid - 1) # low part of the list
 
         # if middle element value is < e then the element can only be 
         # in the high indexed list
         else:
-            return  bisect_search_helper(l, e, mid + 1, high_index)
+            return  bisect_search_helper(l, e, mid + 1, high_index) # hiogh part of the list
 
     if len(l) == 0:
         return False
